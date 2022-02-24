@@ -2,7 +2,7 @@
 
 pipeline {
     agent {
-        docker { image 'docker' }
+        lagel "docker-exec"
     }
     stages {
         stage('Setup') {
