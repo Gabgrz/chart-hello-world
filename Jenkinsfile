@@ -13,7 +13,6 @@ spec:
 ''') {
     node(POD_LABEL) {
                 stage('Setup') {
-                    steps {
                         echo "Setup step";
                         script {
                             def dockerSandbox = docker.image('dtzar/helm-kubectl:3.7.2')
@@ -27,5 +26,4 @@ spec:
                         }
                     }
                 }
-            }
 }
