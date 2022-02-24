@@ -12,18 +12,10 @@ spec:
         value: ""
 ''') {
     node(POD_LABEL) {
-                stage('Setup') {
-                        echo "Setup step";
-                        script {
-                            def dockerSandbox = docker.image('dtzar/helm-kubectl:3.7.2')
-                            dockerSandbox.pull()
-                            dockerSandbox.inside () {
-                                sh "id"
-                                sh "pwd"
-                                sh "ls -l"
-                                sh "helm version"
-                            }
-                        }
-                    }
-                }
+      stage('Setup') {
+        container('docker)' {
+          sh 'docker version'
+        }
+      }
+    }
 }
