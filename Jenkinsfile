@@ -14,7 +14,8 @@ spec:
     node(POD_LABEL) {
       stage('Setup') {
         container('docker') {
-          sh 'docker version'
+          sh 'docker version && \
+          docker pull dtzar/helm-kubectl:3.7.2'
         }
       }
     }
