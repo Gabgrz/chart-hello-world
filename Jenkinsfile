@@ -4,6 +4,11 @@ pipeline {
     agent {
         label "docker-exec"
     }
+    environment { 
+        tools {
+            'org.jenkinsci.plugins.docker.commons.tools.DockerTool' 'docker'
+        }
+    }
     stages {
         stage('Setup') {
             steps {
