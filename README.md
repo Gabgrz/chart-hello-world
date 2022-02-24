@@ -1,4 +1,4 @@
-Credits to https://cloudecho.github.io/charts
+Credits to https://github.com/cloudecho/charts
 
 ## Usage
 
