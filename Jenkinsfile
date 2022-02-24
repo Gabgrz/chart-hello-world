@@ -2,7 +2,7 @@
 
 pipeline {
     agent {
-        label 'centos7-with-docker'
+        label 'terraform-exec'
     }
     stages {
         stage('Setup') {
