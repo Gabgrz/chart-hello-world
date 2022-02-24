@@ -1,7 +1,7 @@
 project:
   name: Hello World
   shortName: Hello
-  url: https://github.com/cloudecho/hello-world-go
+  url: https://github.com/Gabgrz/hello-world-go
   description: A hello-world program written in go lang.
   app: hello
 repository:
