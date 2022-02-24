@@ -12,8 +12,6 @@ spec:
         value: ""
 ''') {
     node(POD_LABEL) {
-        pipeline {
-            stages {
                 stage('Setup') {
                     steps {
                         echo "Setup step";
@@ -30,6 +28,4 @@ spec:
                     }
                 }
             }
-        }
-    }
 }
