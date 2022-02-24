@@ -2,7 +2,7 @@
 
 pipeline {
     agent {
-        label 'jnlp-exec'
+        label 'docker-exec'
     }
     stages {
         stage('Setup') {
