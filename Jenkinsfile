@@ -13,7 +13,7 @@ spec:
 ''') {
     node(POD_LABEL) {
       stage('Setup') {
-        container('docker)' {
+        container('docker') {
           sh 'docker version'
         }
       }
