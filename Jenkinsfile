@@ -2,7 +2,7 @@
 
 pipeline {
     agent {
-        lagel "docker-exec"
+        label "docker-exec"
     }
     stages {
         stage('Setup') {
