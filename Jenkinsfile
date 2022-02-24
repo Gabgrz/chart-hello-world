@@ -1,31 +1,35 @@
 pipeline {
   agent {
     kubernetes {
-        yaml: '''
+      yaml '''
         apiVersion: v1
         kind: Pod
+        metadata:
+          labels:
+            some-label: some-label-value
         spec:
-        containers:
-        - name: docker
-            image: docker:19.03.1-dind
-            securityContext:
-            privileged: true
-            env:
-            - name: DOCKER_TLS_CERTDIR
-                value: ""
-        - name: helm
-            image: dtzar/helm-kubectl:3.7.2
+          containers:
+          - name: maven
+            image: maven:alpine
             command:
             - cat
-            ttyEnabled: true
+            tty: true
+          - name: busybox
+            image: busybox
+            command:
+            - cat
+            tty: true
         '''
     }
   }
   stages {
-    stage('Check helm version') {
+    stage('Run maven') {
       steps {
-        container('helm') {
-          sh 'helm version'
+        container('maven') {
+          sh 'mvn -version'
+        }
+        container('busybox') {
+          sh '/bin/busybox'
         }
       }
     }
