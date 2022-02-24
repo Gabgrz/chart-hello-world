@@ -2,7 +2,7 @@
 
 pipeline {
     agent {
-        label 'terraform-exec'
+        label 'jnlp-exec'
     }
     stages {
         stage('Setup') {
