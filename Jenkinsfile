@@ -14,7 +14,7 @@ pipeline {
             - name: DOCKER_TLS_CERTDIR
                 value: ""
         - name: helm
-            image: "dtzar/helm-kubectl:3.7.2"
+            image: dtzar/helm-kubectl:3.7.2
             command:
             - cat
             ttyEnabled: true
