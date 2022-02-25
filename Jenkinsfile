@@ -1,4 +1,5 @@
-pipeline {
+ // A pipeline for a hello world helm chart
+ pipeline {
   agent {
     kubernetes {
       yaml '''
@@ -37,7 +38,9 @@ pipeline {
           sh '/bin/busybox'
         }
         container('helm') {
-          sh 'helm version'
+          sh 'helm version && \
+          helm repo add cloudecho https://cloudecho.github.io/charts && \
+          helm install my-hello cloudecho/hello -n default --version=0.1.2'
         }        
       }
     }
